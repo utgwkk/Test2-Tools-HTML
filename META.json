@@ -42,7 +42,8 @@
       },
       "runtime" : {
          "requires" : {
-            "Exporter" : "0"
+            "Exporter" : "0",
+            "Test2::Suite" : "0"
          }
       },
       "test" : {
