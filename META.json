@@ -43,8 +43,8 @@
       "runtime" : {
          "requires" : {
             "Exporter" : "0",
-            "HTML::Differences" : "0",
-            "Test2::Suite" : "0"
+            "Test2::Suite" : "0",
+            "Test::HTML::Differences" : "0"
          }
       },
       "test" : {

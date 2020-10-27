@@ -1,5 +1,5 @@
 requires 'Exporter';
-requires 'HTML::Differences';
+requires 'Test::HTML::Differences';
 requires 'Test2::Suite';
 
 on 'test' => sub {
