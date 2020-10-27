@@ -6,6 +6,7 @@ is '<img src="a.gif">', html('<img src="a.gif" />');
 
 is "<body>\nhello\n</body>", html('<body>hello</body>');
 is '<body>hello</body>', html("<body>\nhello\n</body>");
+is '<body>a', html('<body>a</body>');
 
 is <<HTML, html('<!DOCTYPE html><html><body><h1>Hello, world!</h1></body></html>');
     <!DOCTYPE html>
