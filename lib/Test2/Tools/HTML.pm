@@ -1,5 +1,4 @@
 package Test2::Tools::HTML;
-use 5.008001;
 use strict;
 use warnings;
 
