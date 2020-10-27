@@ -3,11 +3,11 @@ use strict;
 use warnings;
 use parent 'Test2::Compare::Base';
 use Test::HTML::Differences;
-use Test2::Util::HashBase qw(html);
+use Test2::Util::HashBase qw(raw_html html);
 
 sub operator { 'HTML' }
 
-sub name { shift->{+HTML} . q() }
+sub name { shift->{+RAW_HTML} }
 
 sub verify {
     my ($self, %params) = @_;
