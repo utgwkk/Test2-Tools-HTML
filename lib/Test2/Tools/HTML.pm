@@ -17,7 +17,7 @@ sub html ($) {
     return Test2::Compare::HTML->new(
         file     => $caller[1],
         lines    => [$caller[2]],
-        html     => Test::HTML::Differences::normalize_html($html),
+        html     => Test::HTML::Differences::normalize_html($html, 1),
         raw_html => $html,
     );
 }

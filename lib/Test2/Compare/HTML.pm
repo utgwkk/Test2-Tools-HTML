@@ -26,7 +26,7 @@ sub deltas {
         id => [META => 'HTML'],
         convert => $params{convert},
         seen => $params{seen},
-        got => Test::HTML::Differences::normalize_html($params{got}),
+        got => Test::HTML::Differences::normalize_html($params{got}, 1),
         exists => 1,
     );
 }
