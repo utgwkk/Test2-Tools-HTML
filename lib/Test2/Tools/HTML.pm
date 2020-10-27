@@ -29,15 +29,45 @@ __END__
 
 =head1 NAME
 
-Test2::Tools::HTML - It's new $module
+Test2::Tools::HTML - Compare HTML string with Test2
 
 =head1 SYNOPSIS
 
+    use Test2::V0;
     use Test2::Tools::HTML;
+
+    is '<img src="a.gif" />', html('<img src="a.gif">');
+    is <<HTML, html('<!DOCTYPE html><html><body><h1>Hello, world!</h1></body></html>');
+    <!DOCTYPE html>
+    <html>
+    <body>
+        <h1>Hello, world!</h1>
+    </body>
+    </html>
+    HTML
 
 =head1 DESCRIPTION
 
-Test2::Tools::HTML is ...
+Test2::Tools::HTML provides comparison tools for HTML string.
+This module was inspired by L<Test::HTML::Differences> and L<Test2::Tools::JSON>.
+
+=head1 FUNCTIONS
+ 
+=over 4
+
+=item $check = html($expected)
+
+Verify the value in the C<$got> HTML string has the same HTML structure as C<$expected>.
+
+    is '<img src="a.gif" />', html('<img src="a.gif">');
+
+=back
+
+=head1 SEE ALSO
+
+L<Test::HTML::Differences>
+
+L<Test2::Suite>, L<Test2::Tools::Compare>
 
 =head1 LICENSE
 
