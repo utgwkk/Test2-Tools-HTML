@@ -2,7 +2,7 @@ package Test2::Compare::HTML;
 use strict;
 use warnings;
 use parent 'Test2::Compare::Base';
-use HTML::Differences qw(diffable_html);
+use Test::HTML::Differences;
 use Test2::Util::HashBase qw(html);
 
 sub operator { 'HTML' }
@@ -26,7 +26,7 @@ sub deltas {
         id => [META => 'HTML'],
         convert => $params{convert},
         seen => $params{seen},
-        got => diffable_html($params{got}),
+        got => Test::HTML::Differences::normalize_html($params{got}),
         exists => 1,
     );
 }

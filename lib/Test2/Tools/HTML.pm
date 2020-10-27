@@ -4,7 +4,7 @@ use warnings;
 
 our $VERSION = "0.01";
 
-use HTML::Differences qw(diffable_html);
+use Test::HTML::Differences;
 use Test2::Compare::HTML ();
 
 use Exporter 'import';
@@ -17,7 +17,7 @@ sub html ($) {
     return Test2::Compare::HTML->new(
         file  => $caller[1],
         lines => [$caller[2]],
-        html  => diffable_html($html),
+        html  => Test::HTML::Differences::normalize_html($html),
     );
 }
 
