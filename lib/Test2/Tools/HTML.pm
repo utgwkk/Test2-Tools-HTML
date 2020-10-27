@@ -4,7 +4,22 @@ use warnings;
 
 our $VERSION = "0.01";
 
+use HTML::Differences qw(diffable_html);
+use Test2::Compare::HTML ();
 
+use Exporter 'import';
+our @EXPORT = qw(html);
+
+sub html ($) {
+    my $html = shift;
+    my @caller = caller;
+
+    return Test2::Compare::HTML->new(
+        file  => $caller[1],
+        lines => [$caller[2]],
+        html  => diffable_html($html),
+    );
+}
 
 1;
 __END__
