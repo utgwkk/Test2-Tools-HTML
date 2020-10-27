@@ -7,6 +7,15 @@ is '<img src="a.gif">', html('<img src="a.gif" />');
 is "<body>\nhello\n</body>", html('<body>hello</body>');
 is '<body>hello</body>', html("<body>\nhello\n</body>");
 
+is <<HTML, html('<!DOCTYPE html><html><body><h1>Hello, world!</h1></body></html>');
+    <!DOCTYPE html>
+    <html>
+    <body>
+        <h1>Hello, world!</h1>
+    </body>
+    </html>
+HTML
+
 subtest 'pass' => sub {
     my $line;
     my $events = intercept {
